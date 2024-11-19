@@ -1,10 +1,14 @@
 
+// index.js
+
 function findEvenNumbers(arr) {
     return arr.filter(num => num % 2 === 0);
   }
+  
   function findOddNumbers(arr) {
     return arr.filter(num => num % 2 !== 0);
   }
+  
   function printPattern(n) {
     let pattern = '';
     for (let i = 1; i <= n; i++) {
@@ -13,11 +17,18 @@ function findEvenNumbers(arr) {
       }
       pattern += '\n';
     }
+    console.log('Pattern:');
     console.log(pattern);
   }
+  
+  function sumOfEvenNumbers(arr) {
+    const evenNumbers = findEvenNumbers(arr);
+    const sum = evenNumbers.reduce((acc, num) => acc + num, 0);
+    return sum;
+  }
+  
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   
   console.log("Even Numbers:", findEvenNumbers(numbers));
-  console.log("Odd Numbers:", findOddNumbers(numbers));
-  printPattern(5);
+  
   
